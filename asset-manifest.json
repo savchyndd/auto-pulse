@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/auto-pulse/static/css/main.e6c13ad2.css",
+    "main.js": "/auto-pulse/static/js/main.39a7b736.js",
+    "index.html": "/auto-pulse/index.html",
+    "main.e6c13ad2.css.map": "/auto-pulse/static/css/main.e6c13ad2.css.map",
+    "main.39a7b736.js.map": "/auto-pulse/static/js/main.39a7b736.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.39a7b736.js"
+  ]
+}
