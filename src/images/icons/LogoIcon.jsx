@@ -1,5 +1,5 @@
 import * as React from "react";
-const SvgComponent = (props) => (
+const LogoIcon = (props) => (
   <svg
     width={304.913}
     height={304.916}
@@ -37,4 +37,4 @@ const SvgComponent = (props) => (
     />
   </svg>
 );
-export default SvgComponent;
+export default LogoIcon;

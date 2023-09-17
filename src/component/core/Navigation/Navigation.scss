@@ -1,0 +1,77 @@
+@import '../../../variables.scss';
+
+.nav {
+
+    & ul {
+        text-align: center;
+    }
+}
+
+.nav_list {
+    display: flex;
+    gap: 12px;
+}
+
+.nav_link {
+    position: relative;
+    display: block;
+
+    font-weight: 800;
+    text-transform: uppercase;
+
+    padding: 12px;
+
+    color: $headingsSecondColor;
+
+
+    border-radius: 5px;
+
+    overflow: hidden;
+    z-index: 1;
+
+    transition: color .5s;
+
+    &.active {
+        color: $whiteColor;
+        background-color: $hoverColor;
+    }
+
+    &:after,
+    &:before {
+        transition: color .5s, width .5s, left .5s, right .5s;
+    }
+
+    &:after,
+    &:before {
+        content: ' ';
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        width: 0;
+        height: 100%;
+        margin: auto;
+        background: $hoverColor;
+        color: transparent;
+        opacity: 0.75;
+        transition: color .5s, width .5s, left .5s, right .5s;
+    }
+
+    &:before {
+        left: 0;
+    }
+
+    &:after {
+        right: 0;
+    }
+
+    &:hover:after,
+    &:hover:before {
+        width: 100%;
+    }
+
+    &:hover {
+        color: $whiteColor;
+    }
+
+}

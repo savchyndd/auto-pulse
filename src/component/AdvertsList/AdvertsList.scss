@@ -1,0 +1,6 @@
+.adverts__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+    justify-items: center;
+    gap: 28px;
+}
