@@ -1,4 +1,4 @@
-import "./SelectField";
+import "./SelectField.scss";
 
 export const SelectField = (props) => {
   const { name, id, label, selectList } = props;

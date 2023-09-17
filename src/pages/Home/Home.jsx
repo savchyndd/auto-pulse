@@ -1,7 +1,8 @@
+import { Section } from "component/kit/Section/Section";
 import React from "react";
 
 const Home = () => {
-  return <div>Home</div>;
+  return <Section>Home</Section>;
 };
 
 export default Home;

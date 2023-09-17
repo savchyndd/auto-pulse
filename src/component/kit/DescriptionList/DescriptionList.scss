@@ -29,19 +29,6 @@
 
     &.medium {
         max-width: 280px;
-
-        &>li {
-            $first-child-in-any-row: ":nth-child(4n + 1)";
-            $any-child-in-the-last-row: ":nth-last-child(-n + 4)";
-
-            $first-child-in-row: "&#{$first-child-in-any-row}#{$any-child-in-the-last-row}";
-            $first-child-in-last-row: "&#{$first-child-in-any-row}#{$any-child-in-the-last-row}";
-
-            #{$first-child-in-last-row},
-            #{$first-child-in-last-row}~& {
-                border-right: 0;
-            }
-        }
     }
 
     &.large {

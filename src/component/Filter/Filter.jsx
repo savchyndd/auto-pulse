@@ -1,4 +1,4 @@
-import "./Filter";
+import "./Filter.scss";
 
 const Filter = () => {
   return <div>Filter</div>;
