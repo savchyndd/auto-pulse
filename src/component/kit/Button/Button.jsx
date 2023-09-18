@@ -1,6 +1,6 @@
 import "./Button.scss";
 
-export const Button = (props) => {
+const Button = (props) => {
   const {
     children = "Button",
     variant = "contained",
@@ -22,3 +22,5 @@ export const Button = (props) => {
     </button>
   );
 };
+
+export default Button;

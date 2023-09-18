@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import "./Section.scss";
 
-export const Section = ({ title, children }) => {
+const Section = ({ title, children }) => {
   return (
     <section className="section">
       {title && <h2 className="section__title">{title}</h2>}
@@ -10,6 +10,8 @@ export const Section = ({ title, children }) => {
     </section>
   );
 };
+
+export default Section;
 
 Section.propTypes = {
   title: PropTypes.string,

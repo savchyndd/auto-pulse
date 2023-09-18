@@ -1,7 +1,7 @@
 import CarsList from "component/AdvertsList/AdvertsList";
 import Filter from "component/Filter/Filter";
 import Modal from "component/Modal/Modal";
-import { Button } from "component/kit/Button/Button";
+import Button from "component/kit/Button/Button";
 import { useDisableBodyScroll } from "hook/useDisableBodyScroll";
 import React, { useState } from "react";
 
@@ -16,7 +16,7 @@ const Favorites = () => {
 
   return (
     <div>
-      <Filter />
+      {/* <Filter /> */}
       <CarsList />
       <Button variant="text">Load more</Button>
       {isShowModal && <Modal />}

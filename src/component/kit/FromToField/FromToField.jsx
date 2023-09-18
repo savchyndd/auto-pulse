@@ -1,5 +1,7 @@
 import "./FromToField.scss";
 
-export const FromToField = () => {
+const FromToField = () => {
   return <div>FromToField</div>;
 };
+
+export default FromToField;

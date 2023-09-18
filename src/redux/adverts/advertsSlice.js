@@ -15,7 +15,7 @@ export const advertsApiSlice = createApi({
       query: (id) => `/advert/${id}`,
       providesTags: ["Advert"],
     }),
-    updateFavoriteAdvertById: builder.query({
+    updateFavoriteAdvertById: builder.mutation({
       query: (fields) => ({
         url: `/advert/${fields.id}`,
         method: "PUT",
@@ -29,5 +29,5 @@ export const advertsApiSlice = createApi({
 export const {
   useGetAdvertsQuery,
   useGetAdvertByIdQuery,
-  updateFavoriteAdvertByIdMitation,
+  useUpdateFavoriteAdvertByIdMutation,
 } = advertsApiSlice;

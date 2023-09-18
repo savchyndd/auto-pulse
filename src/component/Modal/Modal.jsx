@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Button } from "component/kit/Button/Button";
+import Button from "component/kit/Button/Button";
 
 import CloseIcon from "images/icons/CloseIcon";
 

@@ -1,4 +1,4 @@
-import { Section } from "component/kit/Section/Section";
+import Section from "component/kit/Section/Section";
 import React from "react";
 
 const Home = () => {
