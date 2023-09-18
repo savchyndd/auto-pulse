@@ -17,11 +17,12 @@ const Header = () => {
       <div className="header__container">
         <NavLink to="/" className="header__logo">
           <LogoIcon />
+          AutoPulse
         </NavLink>
         <Navigation navLinks={navLinks} />
         <ul className="addition-data__list">
           <li>
-            <p className="addition-data__text">з 8:00 до 21:00</p>
+            <p className="addition-data__text">Графік з 8:00 до 21:00</p>
           </li>
           <li>
             <a href="tel:+380674354543" className="addition-data__link">

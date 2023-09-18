@@ -1,7 +1,6 @@
 @import '../../../variables.scss';
 
 .footer {
-    // width: 100%;
     color: $headingsSecondColor;
     padding: 12px;
     border-top-left-radius: 25px;
@@ -31,21 +30,75 @@
     }
 
     &__logo {
-        display: grid;
+        position: relative;
+
+        display: flex;
         align-items: center;
-        width: fit-content;
-        height: fit-content;
+
+        font-weight: 800;
+        text-transform: uppercase;
+
+        padding: 4px;
+
+        color: $whiteColor;
+
+
+        border-radius: 5px;
+
+        overflow: hidden;
+        z-index: 1;
+
+        transition: color .5s;
 
         &>svg {
-            width: 70px;
-            height: 70px;
+            fill: $accentColor;
+            transition: fill .5s;
         }
 
-        border-radius: 50%;
-    }
+        &:after,
+        &:before {
+            transition: color .5s, width .5s, left .5s, right .5s;
+        }
 
-    &__logo.active {
-        background-color: $hoverColor;
+        &:after,
+        &:before {
+            content: ' ';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            height: 100%;
+            margin: auto;
+            background: $hoverColor;
+            color: transparent;
+            opacity: 0.75;
+            transition: color .5s, width .5s, left .5s, right .5s;
+        }
+
+        &:before {
+            left: 0;
+        }
+
+        &:after {
+            right: 0;
+        }
+
+        &:hover:after,
+        &:hover:before,
+        &:focus:after,
+        &:focus:before {
+            width: 100%;
+        }
+
+        &:hover,
+        &:focus {
+            color: $whiteColor;
+
+            &>svg {
+                fill: $whiteColor;
+            }
+        }
     }
 }
 
@@ -53,6 +106,8 @@
     position: relative;
     z-index: 1;
     display: block;
+
+    width: fit-content;
 
     color: inherit;
 

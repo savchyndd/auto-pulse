@@ -11,6 +11,7 @@ const Footer = () => {
         <div className="footer__wrapper">
           <NavLink to="/" className="footer__logo">
             <LogoIcon />
+            AutoPulse
           </NavLink>
           <address>
             <ul className="address__list">

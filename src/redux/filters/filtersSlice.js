@@ -1,16 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filterInitialState = "";
+const filterInitialState = { brands: [], price: [], mileage: [] };
 
 const filtersSlice = createSlice({
   name: "filters",
   initialState: filterInitialState,
   reducers: {
     setAdvertsFilter(state, action) {
-      return (state = action.payload);
+      console.log(state);
+
+      return (state.filter = { ...state, ...[action.payload] });
     },
   },
 });
 
-export const { setAdvertsFilter } = filtersSlice.actions;
 export const filtersReducer = filtersSlice.reducer;
+export const { setAdvertsFilter } = filtersSlice.actions;
