@@ -3,7 +3,6 @@ import React from "react";
 import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
 
 import "./CarsInStock.scss";
-import Button from "component/kit/Button/Button";
 import { NavLink } from "react-router-dom";
 
 const CarsInStock = () => {

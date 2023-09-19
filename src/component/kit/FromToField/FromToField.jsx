@@ -5,7 +5,6 @@ import { formatingCommasToNumber } from "utils/formatingCommasToNumber";
 
 const FromToField = (props) => {
   const {
-    name,
     id = "text-input",
     label = "label",
     value = { from: "", to: "" },
