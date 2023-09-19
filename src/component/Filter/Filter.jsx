@@ -6,34 +6,51 @@ import "./Filter.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
 import { setAdvertsFilter } from "redux/filters/filtersSlice";
+import { removeCommasFromString } from "utils/formatingCommasToNumber";
 
 const Filter = ({ filtersList }) => {
   const dispatch = useDispatch();
   const filter = useSelector(selectAdvertsFilter);
 
-  const handleChangeFilter = ({ currentTarget }) => {
-    dispatch(setAdvertsFilter({ [currentTarget.name]: currentTarget.value }));
-    console.log("Таргет", currentTarget.name, currentTarget.value);
+  const handleChangeFilter = (e) => {
+    e.preventDefault();
+    const { brand, price, from, to } = e.target.elements;
+
+    const newfilters = {
+      [brand.name]: brand.value,
+      [price.name]: price.value,
+      mileage: {
+        from: removeCommasFromString(from.value),
+        to: removeCommasFromString(to.value),
+      },
+      prices: [],
+    };
+
+    dispatch(setAdvertsFilter(newfilters));
   };
 
   return (
-    <div className="filter">
+    <form className="filter" onSubmit={handleChangeFilter}>
       <SelectField
         name="brand"
         label="Car brand"
+        value={filter.brand}
         optionList={filtersList.brands}
-        onChange={handleChangeFilter}
       />
       <SelectField
         name="price"
         label="Price/ 1 hour"
         placeholder="To $"
-        optionList={filtersList.price}
-        onChange={handleChangeFilter}
+        value={filter.price}
+        optionList={filtersList.prices}
       />
-      {/*  <FromToField />*/}
-      <Button>Search</Button>
-    </div>
+      <FromToField
+        name="mileage"
+        label="Сar mileage / km"
+        value={filter.mileage}
+      />
+      <Button type="submit">Search</Button>
+    </form>
   );
 };
 

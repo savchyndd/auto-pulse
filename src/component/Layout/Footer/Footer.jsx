@@ -22,7 +22,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="address__link address__link--location"
                 >
-                  м. Київ, пр-т Лесі Українки, 26
+                  c. Kyiv, 26 Lesi Ukrainky Ave.
                 </a>
               </li>
               <li className="address__item">
@@ -38,7 +38,7 @@ const Footer = () => {
             </ul>
           </address>
         </div>
-        <p>© 2023 AutoPulse - оренда авто.</p>
+        <p>© 2023 AutoPulse - rental cat.</p>
       </div>
     </footer>
   );

@@ -4,6 +4,7 @@ import DescriptionChipList from "../kit/DescriptionChipList/DescriptionChipList"
 import { getCarDetailsDescList } from "utils/getCarDescriptionList";
 
 import "./CarModalCard.scss";
+import { formatingCommasToNumber } from "utils/formatingCommasToNumber";
 
 function CarModalCard({ car }) {
   const {
@@ -19,9 +20,10 @@ function CarModalCard({ car }) {
     rentalPrice,
   } = car;
   const descriptionList = getCarDetailsDescList(car);
+
   const rentalConditionsArray = [
     ...rentalConditions.split("\n"),
-    `Milage: ${mileage}`,
+    `Milage: ${formatingCommasToNumber(mileage.toString())}`,
     `Price: ${rentalPrice}`,
   ];
 

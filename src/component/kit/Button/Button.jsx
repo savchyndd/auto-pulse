@@ -2,6 +2,7 @@ import "./Button.scss";
 
 const Button = (props) => {
   const {
+    type = "button",
     children = "Button",
     variant = "contained",
     size = "small",
@@ -11,7 +12,7 @@ const Button = (props) => {
 
   return (
     <button
-      type="button"
+      type={type}
       className={`button 
       ${variant === "text" ? "button--text" : ""} 
       ${size === "large" ? "button--large-size" : "button--small-size"}

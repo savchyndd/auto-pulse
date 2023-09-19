@@ -1,5 +1,6 @@
 import ChevronDownIcon from "images/icons/ChevronDownIcon";
 import "./SelectField.scss";
+import { useState } from "react";
 
 const SelectField = (props) => {
   const {
@@ -8,13 +9,25 @@ const SelectField = (props) => {
     label,
     placeholder = "Enter the text",
     optionList,
-    onChange,
+    value,
   } = props;
+
+  const [fieldValue, setFieldValue] = useState(value);
+
+  const onChange = (e) => {
+    setFieldValue(e.target.value);
+  };
 
   return (
     <div className="select-field__wrapper">
       <label htmlFor={name}>{label}</label>
-      <select name={name} id={id} placeholder={placeholder} onChange={onChange}>
+      <select
+        name={name}
+        value={fieldValue}
+        id={id}
+        placeholder={placeholder}
+        onChange={onChange}
+      >
         <option value="">{placeholder}</option>
         {optionList.map((item) => (
           <option key={`${name}_${Math.random()}`} value={item}>

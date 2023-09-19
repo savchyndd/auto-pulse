@@ -1,15 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const filterInitialState = { brands: [], price: [], mileage: [] };
+const filterInitialState = {
+  brand: "",
+  price: "",
+  mileage: { from: "", to: "" },
+};
 
 const filtersSlice = createSlice({
   name: "filters",
   initialState: filterInitialState,
   reducers: {
     setAdvertsFilter(state, action) {
-      console.log(state);
-
-      return (state.filter = { ...state, ...[action.payload] });
+      return (state = { ...state, ...action.payload });
     },
   },
 });
