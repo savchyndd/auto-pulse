@@ -37,7 +37,7 @@ const CarCard = ({ car }) => {
   };
 
   return (
-    <>
+    <li>
       <div className="card">
         <div className="card__wrapper">
           <div className="card__thumb-img">
@@ -66,7 +66,7 @@ const CarCard = ({ car }) => {
           <CarModalCard car={car} />
         </Modal>
       )}
-    </>
+    </li>
   );
 };
 

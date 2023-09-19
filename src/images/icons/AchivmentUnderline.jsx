@@ -14,7 +14,7 @@ const AchivmentUnderline = (props) => (
       </g>
     </g>
     <defs>
-      <clipPath id="a">
+      <clipPath>
         <path fill="#fff" d="M-104-3205h1440v5743H-104z" />
       </clipPath>
     </defs>

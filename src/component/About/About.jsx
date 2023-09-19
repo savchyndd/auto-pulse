@@ -36,7 +36,7 @@ const About = () => {
           </li>
         </ul>
       </div>
-      <img src={carImg} aria-label="Car" />
+      <img src={carImg} alt="Car" />
     </div>
   );
 };

@@ -20,12 +20,11 @@ const SelectField = (props) => {
 
   return (
     <div className="select-field__wrapper">
-      <label htmlFor={name}>{label}</label>
+      <label htmlFor={`${id}_${name}`}>{label}</label>
       <select
         name={name}
         value={fieldValue}
-        id={id}
-        placeholder={placeholder}
+        id={`${id}_${name}`}
         onChange={onChange}
       >
         <option value="">{placeholder}</option>
