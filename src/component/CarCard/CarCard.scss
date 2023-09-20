@@ -77,7 +77,15 @@
     }
 }
 
+
+.card__wrapper {
+    &>ul {
+        height: 40px;
+        overflow: hidden;
+    }
+}
+
 .card__btn {
-    margin-top: auto;
+    margin-top: 28px;
     width: 100%;
 }
