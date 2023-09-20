@@ -21,25 +21,25 @@ const AdvertsList = ({ list = [] }) => {
 export default AdvertsList;
 
 AdvertsList.propTypes = {
-  list: PropTypes.array,
-  //   (
-  //   PropTypes.shape({
-  //     id: number,
-  //     year: number,
-  //     make: string,
-  //     model: string,
-  //     type: string,
-  //     img: string,
-  //     description: string,
-  //     fuelConsumption: string,
-  //     engineSize: string,
-  //     accessories: array,
-  //     functionalities: array,
-  //     rentalPrice: string,
-  //     rentalCompany: string,
-  //     address: string,
-  //     rentalConditions: string,
-  //     mileage: number,
-  //   })
-  // ).isRequired,
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      year: PropTypes.number.isRequired,
+      make: PropTypes.string.isRequired,
+      model: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      fuelConsumption: PropTypes.string.isRequired,
+      engineSize: PropTypes.string.isRequired,
+      accessories: PropTypes.array.isRequired,
+      functionalities: PropTypes.array.isRequired,
+      rentalPrice: PropTypes.string.isRequired,
+      rentalCompany: PropTypes.string.isRequired,
+      address: PropTypes.string.isRequired,
+      rentalConditions: PropTypes.string.isRequired,
+      mileage: PropTypes.number.isRequired,
+      favorite: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
 };

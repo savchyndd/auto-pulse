@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+
 import ChevronDownIcon from "images/icons/ChevronDownIcon";
+
 import "./SelectField.scss";
-import { useState } from "react";
 
 const SelectField = (props) => {
   const {
@@ -12,31 +15,76 @@ const SelectField = (props) => {
     value,
   } = props;
 
-  const [fieldValue, setFieldValue] = useState(value);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
 
-  const onChange = (e) => {
-    setFieldValue(e.target.value);
+  const toggling = () => setIsOpen(!isOpen);
+
+  const onOptionClicked = (value) => () => {
+    setSelectedOption(value);
+    setIsOpen(false);
   };
 
+  useEffect(() => {
+    const handleKeydown = (e) => {
+      if (e.code === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [isOpen]);
+
   return (
-    <div className="select-field__wrapper">
-      <label htmlFor={`${id}_${name}`}>{label}</label>
-      <select
-        name={name}
-        value={fieldValue}
-        id={`${id}_${name}`}
-        onChange={onChange}
-      >
-        <option value="">{placeholder}</option>
-        {optionList.map((item) => (
-          <option key={`${name}_${Math.random()}`} value={item}>
-            {item}
-          </option>
-        ))}
-      </select>
-      <ChevronDownIcon />
+    <div className="dropdown__cotainer">
+      <p className="dropdown__label">{label}</p>
+      <div className="dropdown__select">
+        <div
+          className={`dropdown__header ${isOpen ? "dropdown__open" : ""}`}
+          onClick={toggling}
+        >
+          <input
+            type="text"
+            id={id}
+            name={name}
+            value={selectedOption || placeholder}
+            readOnly={true}
+            className="dropdown__select--input"
+          />
+          <ChevronDownIcon />
+        </div>
+        {isOpen && (
+          <div className="dropdown__list-container">
+            <ul className="dropdown__list">
+              {optionList.map((option) => (
+                <li
+                  name={name}
+                  onClick={onOptionClicked(option)}
+                  key={Math.random()}
+                  className="dropdown__item"
+                >
+                  {option}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
 
 export default SelectField;
+
+SelectField.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.string,
+  label: PropTypes.string,
+  placeholder: PropTypes.string,
+  optionList: PropTypes.array,
+  value: PropTypes.string,
+};

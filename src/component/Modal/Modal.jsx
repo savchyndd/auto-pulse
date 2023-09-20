@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 import Button from "component/kit/Button/Button";
 
@@ -45,7 +46,7 @@ const Modal = ({ children, onCloseModal }) => {
 
 export default Modal;
 
-// Modal.propTypes = {
-//   children: PropTypes.node,
-//   onCloseModal: PropTypes.func,
-// };
+Modal.propTypes = {
+  children: PropTypes.node,
+  onCloseModal: PropTypes.func,
+};

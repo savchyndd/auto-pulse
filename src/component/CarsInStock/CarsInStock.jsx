@@ -1,9 +1,9 @@
-import AdvertsList from "component/AdvertsList/AdvertsList";
-import React from "react";
+import { NavLink } from "react-router-dom";
 import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
 
+import AdvertsList from "component/AdvertsList/AdvertsList";
+
 import "./CarsInStock.scss";
-import { NavLink } from "react-router-dom";
 
 const CarsInStock = () => {
   const { data: adverts, isLoading } = useGetAdvertsQuery();

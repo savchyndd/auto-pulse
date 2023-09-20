@@ -1,10 +1,12 @@
+import PropTypes from "prop-types";
+
+import { getCarDetailsDescList } from "utils/getCarDescriptionList";
+import { formatingCommasToNumber } from "utils/formatingCommasToNumber";
+
 import DescriptionList from "../kit/DescriptionList/DescriptionList";
 import DescriptionChipList from "../kit/DescriptionChipList/DescriptionChipList";
 
-import { getCarDetailsDescList } from "utils/getCarDescriptionList";
-
 import "./CarModalCard.scss";
-import { formatingCommasToNumber } from "utils/formatingCommasToNumber";
 
 function CarModalCard({ car }) {
   const {
@@ -55,7 +57,7 @@ function CarModalCard({ car }) {
         <h4>Rental Conditions:</h4>
         <DescriptionChipList list={rentalConditionsArray} />
       </div>
-      <a className="card-modal__btn" href="tel:+380674354543">
+      <a className="card-modal__btn" href="tel:+380730000000">
         Rental Car
       </a>
     </div>
@@ -63,3 +65,23 @@ function CarModalCard({ car }) {
 }
 
 export default CarModalCard;
+
+CarModalCard.propTypes = PropTypes.shape({
+  id: PropTypes.string,
+  year: PropTypes.number.isRequired,
+  make: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  img: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  fuelConsumption: PropTypes.string,
+  engineSize: PropTypes.string,
+  accessories: PropTypes.array.isRequired,
+  functionalities: PropTypes.array.isRequired,
+  rentalPrice: PropTypes.string.isRequired,
+  rentalCompany: PropTypes.string,
+  address: PropTypes.string.isRequired,
+  rentalConditions: PropTypes.string.isRequired,
+  mileage: PropTypes.number.isRequired,
+  favorite: PropTypes.bool,
+}).isRequired;

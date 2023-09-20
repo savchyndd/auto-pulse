@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./DescriptionChipList.scss";
 
 const DescriptionChipList = ({ list }) => {
@@ -22,3 +24,7 @@ const DescriptionChipList = ({ list }) => {
 };
 
 export default DescriptionChipList;
+
+DescriptionChipList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string),
+};

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./DescriptionList.scss";
 
 const DescriptionList = ({ list = [], size = "large" }) => {
@@ -11,3 +13,8 @@ const DescriptionList = ({ list = [], size = "large" }) => {
 };
 
 export default DescriptionList;
+
+DescriptionList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  size: PropTypes.string,
+};

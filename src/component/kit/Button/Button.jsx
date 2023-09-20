@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import "./Button.scss";
 
 const Button = (props) => {
@@ -25,3 +27,12 @@ const Button = (props) => {
 };
 
 export default Button;
+
+Button.propTypes = {
+  type: PropTypes.string,
+  children: PropTypes.node,
+  variant: PropTypes.string,
+  size: PropTypes.string,
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+};

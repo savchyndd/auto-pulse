@@ -25,8 +25,8 @@ const Header = () => {
             <p className="addition-data__text">Schedule from 8:00 to 21:00</p>
           </li>
           <li>
-            <a href="tel:+380674354543" className="addition-data__link">
-              +380 67 43 54 543
+            <a href="tel:+380730000000" className="addition-data__link">
+              +380 73 000 00 00
             </a>
           </li>
         </ul>

@@ -1,4 +1,5 @@
 import carImg from "../../images/car.png";
+
 import "./Hero.scss";
 
 const Hero = () => {

@@ -1,0 +1,36 @@
+@import '../../variables';
+
+.favorite__container {
+    position: relative;
+    display: flex;
+}
+
+.favorite__filter-wrapper {
+    position: sticky;
+    top: 24px;
+    left: 0;
+    padding: 24px 12px;
+    background-color: $bgDarkColor;
+
+    height: fit-content;
+    border-radius: 0 24px 24px 0;
+
+    &>.filter {
+        flex-direction: column;
+        align-items: flex-start;
+
+        width: fit-content;
+
+        margin-bottom: 0;
+    }
+}
+
+.favorite__adverts-wrapper {
+    width: 100%;
+
+    &>button {
+        display: block;
+        margin: auto;
+        margin-top: 44px;
+    }
+}

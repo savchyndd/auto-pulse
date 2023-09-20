@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is for a car rental company. It is built on ReactJS with SASS and uses mockapi.io for interacting with the database.
+This project is the adaptive site for a car rental company. Site with filters and added favorite adverts and developed the design by the technical specifications. It is built on ReactJS with SASS and uses mockapi.io for interacting with the database.
 
 > [![Front-End - GitHub Pages](https://img.shields.io/badge/Front--End-GitHub%20Pages-FFDD00?logo=github&labelColor=0057B7)](https://savchyndd.github.io/auto-pulse/)  
 > [![Front-End - GitHub Repository](https://img.shields.io/badge/Front--End-GitHub%20Repository-FFDD00?logo=github&labelColor=0057B7)](https://github.com/savchyndd/auto-pulse)
@@ -11,7 +11,7 @@ This project is for a car rental company. It is built on ReactJS with SASS and u
 
 Here are some of the key technologies and libraries used in this project:
 
-![React.js](https://img.shields.io/badge/React.js-18.2-61DAFB?logo=react) - ![SASS](https://img.shields.io/badge/SASS-1.67-CC6699?logo=sass)
+![React.js](https://img.shields.io/badge/React.js-18.2-61DAFB?logo=react) - ![SASS](https://img.shields.io/badge/SASS-1.67-CC6699?logo=sass) - ![PropTypes](https://img.shields.io/badge/PropTypes-15.8-yellow) - ![ReactRedux](https://img.shields.io/badge/React_Redux-8.1-blue) - ![ReactToastify](https://img.shields.io/badge/ReactToastify-9.1-purple) - ![RTKQuery](https://img.shields.io/badge/RTKQuery--orange)
 
 ## Project's pages
 

@@ -1,4 +1,3 @@
-// Colors
 $fontSize: 12px;
 $headingsSecondFontSize: 14px;
 $headingsFontSize: 18px;
@@ -23,11 +22,7 @@ $borderSecondColor: rgba(138, 138, 137, 0.20);
 $whiteColor: #ffffff;
 $blackColor: #121417;
 
-//  Брейк-поїнти
-$desktop: 91.25em; //Пк, Ноутбукі
-$tablet: 61.9988em; // Планшети
-$mobile: 47.9988em; // Телефони
-$mobileSmall: 29.9988em; // Малі телефони
+$desktop: 91.25em;
 
 :export {
     fontSize: $fontSize;
@@ -53,7 +48,4 @@ $mobileSmall: 29.9988em; // Малі телефони
     blackColor: $blackColor;
 
     desktop: $desktop;
-    tablet: $tablet;
-    mobile: $mobile;
-    mobileSmall: $mobileSmall;
 }

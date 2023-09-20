@@ -1,12 +1,17 @@
+import { useDispatch, useSelector } from "react-redux";
+import PropTypes from "prop-types";
+
+import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
+import { setAdvertsFilter } from "redux/filters/filtersSlice";
+
+import { removeCommasFromString } from "utils/formatingCommasToNumber";
+
 import FromToField from "component/kit/FromToField/FromToField";
 import SelectField from "component/kit/SelectField/SelectField";
 import Button from "component/kit/Button/Button";
 
 import "./Filter.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
-import { setAdvertsFilter } from "redux/filters/filtersSlice";
-import { removeCommasFromString } from "utils/formatingCommasToNumber";
+import { toast } from "react-toastify";
 
 const Filter = ({ filtersList }) => {
   const dispatch = useDispatch();
@@ -14,11 +19,22 @@ const Filter = ({ filtersList }) => {
 
   const handleChangeFilter = (e) => {
     e.preventDefault();
+
     const { brand, price, from, to } = e.target.elements;
 
+    if (
+      (!brand.value || brand.value === "Enter the text") &&
+      (!price.value || price.value === "To $") &&
+      !from.value &&
+      !to.value
+    ) {
+      toast.info("Please chose one of filters");
+      return;
+    }
+
     const newfilters = {
-      [brand.name]: brand.value,
-      [price.name]: price.value,
+      [brand.name]: brand.value !== "Enter the text" ? brand.value : "",
+      [price.name]: price.value !== "To $" ? price.value : "",
       mileage: {
         from: removeCommasFromString(from.value),
         to: removeCommasFromString(to.value),
@@ -55,3 +71,8 @@ const Filter = ({ filtersList }) => {
 };
 
 export default Filter;
+
+Filter.propTypes = PropTypes.shape({
+  brands: PropTypes.arrayOf(PropTypes.string).isRequired,
+  prices: PropTypes.arrayOf(PropTypes.number).isRequired,
+}).isRequired;

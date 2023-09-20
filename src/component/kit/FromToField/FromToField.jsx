@@ -1,7 +1,11 @@
 import { useState } from "react";
-import "./FromToField.scss";
+import PropTypes from "prop-types";
+
 import { toast } from "react-toastify";
+
 import { formatingCommasToNumber } from "utils/formatingCommasToNumber";
+
+import "./FromToField.scss";
 
 const FromToField = (props) => {
   const {
@@ -37,6 +41,7 @@ const FromToField = (props) => {
             id={`${id}_from`}
             type="text"
             onChange={onChange}
+            autoComplete="off"
           />
         </div>
         <div className="input-fromto__wrapper">
@@ -48,6 +53,7 @@ const FromToField = (props) => {
             id={`${id}_to`}
             type="text"
             onChange={onChange}
+            autoComplete="off"
           />
         </div>
       </div>
@@ -56,3 +62,9 @@ const FromToField = (props) => {
 };
 
 export default FromToField;
+
+FromToField.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string,
+  value: PropTypes.shape({ from: PropTypes.string, to: PropTypes.string }),
+};

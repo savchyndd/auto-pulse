@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import { NavLink } from "react-router-dom";
 
 import "./Navigation.scss";
@@ -21,3 +23,10 @@ const Navigation = ({ navLinks }) => {
 };
 
 export default Navigation;
+
+Navigation.propTypes = PropTypes.arrayOf(
+  PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    href: PropTypes.string.isRequired,
+  })
+).isRequired;

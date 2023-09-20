@@ -1,5 +1,12 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
+
+import { toast } from "react-toastify";
+
 import { useDisableBodyScroll } from "hook/useDisableBodyScroll";
+import { useUpdateFavoriteAdvertByIdMutation } from "redux/adverts/advertsSlice";
+
+import { getCarDescList } from "utils/getCarDescriptionList";
 
 import HeartIcon from "images/icons/HeartIcon";
 
@@ -8,10 +15,7 @@ import Button from "component/kit/Button/Button";
 import CarModalCard from "component/CarModalCard/CarModalCard";
 import Modal from "component/Modal/Modal";
 
-import { getCarDescList } from "utils/getCarDescriptionList";
-
 import "./CarCard.scss";
-import { useUpdateFavoriteAdvertByIdMutation } from "redux/adverts/advertsSlice";
 
 const CarCard = ({ car }) => {
   const { id, img, make, model, year, rentalPrice, favorite } = car;
@@ -30,9 +34,8 @@ const CarCard = ({ car }) => {
   const handleToggleFavorite = async (id) => {
     try {
       updateFavoriteAdvertById({ id, favorite: !favorite });
-      console.log({ favorite: !favorite });
     } catch (error) {
-      console.warn(error);
+      toast.warn("Sorry something wrong");
     }
   };
 
@@ -71,3 +74,33 @@ const CarCard = ({ car }) => {
 };
 
 export default CarCard;
+
+// import PropTypes from "prop-types";
+// Button.propTypes = {
+//   type: PropTypes.string,
+//   children: PropTypes.node,
+//   variant: PropTypes.string,
+//   size: PropTypes.string,
+//   className: PropTypes.string,
+//   onClick: PropTypes.func,
+// };
+
+CarCard.propTypes = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  year: PropTypes.number.isRequired,
+  make: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  fuelConsumption: PropTypes.string.isRequired,
+  engineSize: PropTypes.string.isRequired,
+  accessories: PropTypes.array.isRequired,
+  functionalities: PropTypes.array.isRequired,
+  rentalPrice: PropTypes.string.isRequired,
+  rentalCompany: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  rentalConditions: PropTypes.string.isRequired,
+  mileage: PropTypes.number.isRequired,
+  favorite: PropTypes.bool.isRequired,
+}).isRequired;

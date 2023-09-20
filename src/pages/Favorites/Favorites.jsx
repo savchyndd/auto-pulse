@@ -1,13 +1,19 @@
+import { useMemo, useState } from "react";
+import { useSelector } from "react-redux";
+
+import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
+import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
+
+import { createArrayWithStep } from "utils/createArrayWithStep";
+import { getFilteredAdverts } from "utils/getFilteredAdverts";
+
 import AdvertsList from "component/AdvertsList/AdvertsList";
 import Filter from "component/Filter/Filter";
 import Button from "component/kit/Button/Button";
+import Loader from "component/kit/Loader/Loader";
 import Section from "component/kit/Section/Section";
-import React, { useMemo, useState } from "react";
-import { useSelector } from "react-redux";
-import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
-import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
-import { createArrayWithStep } from "utils/createArrayWithStep";
-import { getFilteredAdverts } from "utils/getFilteredAdverts";
+
+import "./Favorite.scss";
 
 const Favorites = () => {
   const filter = useSelector(selectAdvertsFilter);
@@ -22,7 +28,7 @@ const Favorites = () => {
   };
   let visibleAdverts = useMemo(() => {}, []);
 
-  const limitAdverts = 12;
+  const limitAdverts = 8;
   let totalAdverts = 0;
   let totalPages = 0;
 
@@ -32,7 +38,7 @@ const Favorites = () => {
     visibleAdverts = getFilteredAdverts(favoritedAdverts, filter);
 
     dataFilters = {
-      brands: [...new Set(favoritedAdverts.map(({ make }) => make))],
+      brands: ["All", ...new Set(favoritedAdverts.map(({ make }) => make))],
       prices: createArrayWithStep(
         0,
         Math.max(
@@ -63,22 +69,45 @@ const Favorites = () => {
       window.scrollTo(0, 0);
     }
   };
+
+  const hundleClickRetuntToStart = () => {
+    setCurrentPage(1);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Section>
+      {isLoading && <Loader />}
+
       {!isLoading && (
-        <>
-          <Filter filtersList={dataFilters} />
-          <AdvertsList list={currentAdvertsData} />
-          {totalPages > currentPage && (
-            <Button
-              variant="text"
-              className="load-more__btn"
-              onClick={hundleClickLoadMore}
-            >
-              Load more
-            </Button>
-          )}
-        </>
+        <div className="favorite__container">
+          <div className="favorite__filter-wrapper">
+            <Filter filtersList={dataFilters} />
+          </div>
+          <div className="favorite__adverts-wrapper">
+            <AdvertsList list={currentAdvertsData} />
+            <div className="buttons__wrapper">
+              {totalPages > currentPage && (
+                <Button
+                  variant="text"
+                  className="load-more__btn"
+                  onClick={hundleClickLoadMore}
+                >
+                  Load more
+                </Button>
+              )}
+              {currentPage !== 1 && (
+                <Button
+                  variant="text"
+                  className="load-more__btn"
+                  onClick={hundleClickRetuntToStart}
+                >
+                  Return to 1 page
+                </Button>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </Section>
   );

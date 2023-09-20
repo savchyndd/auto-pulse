@@ -1,6 +1,6 @@
-import About from "component/About/About";
-import CarsInStock from "component/CarsInStock/CarsInStock";
 import Hero from "component/Hero/Hero";
+import CarsInStock from "component/CarsInStock/CarsInStock";
+import About from "component/About/About";
 import Section from "component/kit/Section/Section";
 
 const Home = () => {

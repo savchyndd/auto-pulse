@@ -1,16 +1,19 @@
-import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
-
-import Section from "component/kit/Section/Section";
-import Button from "component/kit/Button/Button";
-import AdvertsList from "component/AdvertsList/AdvertsList";
-import Filter from "component/Filter/Filter";
-
-import "./Catalog.scss";
 import { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
+
+import { useGetAdvertsQuery } from "redux/adverts/advertsSlice";
 import { selectAdvertsFilter } from "redux/filters/filtersSelectors";
+
 import { getFilteredAdverts } from "utils/getFilteredAdverts";
 import { createArrayWithStep } from "utils/createArrayWithStep";
+
+import AdvertsList from "component/AdvertsList/AdvertsList";
+import Filter from "component/Filter/Filter";
+import Section from "component/kit/Section/Section";
+import Button from "component/kit/Button/Button";
+import Loader from "component/kit/Loader/Loader";
+
+import "./Catalog.scss";
 
 const Catalog = () => {
   const filter = useSelector(selectAdvertsFilter);
@@ -24,14 +27,14 @@ const Catalog = () => {
   };
   let visibleAdverts = useMemo(() => {}, []);
 
-  const limitAdverts = 12;
+  const limitAdverts = 8;
   let totalAdverts = 0;
   let totalPages = 0;
 
   if (!isLoading) {
     visibleAdverts = getFilteredAdverts(adverts, filter);
     dataFilters = {
-      brands: [...new Set(adverts.map(({ make }) => make))],
+      brands: ["All", ...new Set(adverts.map(({ make }) => make))],
       prices: createArrayWithStep(
         0,
         Math.max(
@@ -61,21 +64,38 @@ const Catalog = () => {
     }
   };
 
+  const hundleClickRetuntToStart = () => {
+    setCurrentPage(1);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Section>
+      {isLoading && <Loader />}
       {!isLoading && (
         <>
           <Filter filtersList={dataFilters} />
           <AdvertsList list={currentAdvertsData} />
-          {totalPages > currentPage && (
-            <Button
-              variant="text"
-              className="load-more__btn"
-              onClick={hundleClickLoadMore}
-            >
-              Load more
-            </Button>
-          )}
+          <div className="buttons__wrapper">
+            {totalPages > currentPage && (
+              <Button
+                variant="text"
+                className="load-more__btn"
+                onClick={hundleClickLoadMore}
+              >
+                Load more
+              </Button>
+            )}
+            {currentPage !== 1 && (
+              <Button
+                variant="text"
+                className="load-more__btn"
+                onClick={hundleClickRetuntToStart}
+              >
+                Return to 1 page
+              </Button>
+            )}
+          </div>
         </>
       )}
     </Section>

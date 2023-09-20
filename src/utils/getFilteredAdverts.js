@@ -1,6 +1,10 @@
 export const getFilteredAdverts = (adverts, filters) => {
   return adverts.filter((car) => {
-    if (filters.brand && car.make !== filters.brand) {
+    if (
+      filters.brand &&
+      car.make !== filters.brand &&
+      filters.brand !== "All"
+    ) {
       return false;
     }
 
