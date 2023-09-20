@@ -6,14 +6,7 @@ import ChevronDownIcon from "images/icons/ChevronDownIcon";
 import "./SelectField.scss";
 
 const SelectField = (props) => {
-  const {
-    name,
-    id,
-    label,
-    placeholder = "Enter the text",
-    optionList,
-    value,
-  } = props;
+  const { name, id, label, placeholder = "Enter the text", optionList } = props;
 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
