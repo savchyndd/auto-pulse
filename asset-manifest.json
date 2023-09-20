@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/auto-pulse/static/css/main.3a0c7337.css",
-    "main.js": "/auto-pulse/static/js/main.d642e31e.js",
-    "static/css/881.ac4948a8.chunk.css": "/auto-pulse/static/css/881.ac4948a8.chunk.css",
+    "main.js": "/auto-pulse/static/js/main.d9f66f28.js",
+    "static/css/881.f28d71af.chunk.css": "/auto-pulse/static/css/881.f28d71af.chunk.css",
     "static/js/881.a42c728a.chunk.js": "/auto-pulse/static/js/881.a42c728a.chunk.js",
-    "static/css/556.074b9bf5.chunk.css": "/auto-pulse/static/css/556.074b9bf5.chunk.css",
+    "static/css/556.cae034cc.chunk.css": "/auto-pulse/static/css/556.cae034cc.chunk.css",
     "static/js/556.4b0240cb.chunk.js": "/auto-pulse/static/js/556.4b0240cb.chunk.js",
-    "static/css/404.27970cc1.chunk.css": "/auto-pulse/static/css/404.27970cc1.chunk.css",
+    "static/css/404.1858572b.chunk.css": "/auto-pulse/static/css/404.1858572b.chunk.css",
     "static/js/404.071deebf.chunk.js": "/auto-pulse/static/js/404.071deebf.chunk.js",
     "static/js/319.e56e1775.chunk.js": "/auto-pulse/static/js/319.e56e1775.chunk.js",
     "static/media/car_about.png": "/auto-pulse/static/media/car_about.a975a46d08ee7d1e2b19.png",
@@ -14,17 +14,17 @@
     "static/media/hero_bg.png": "/auto-pulse/static/media/hero_bg.fb5120a99200d897a1a9.png",
     "index.html": "/auto-pulse/index.html",
     "main.3a0c7337.css.map": "/auto-pulse/static/css/main.3a0c7337.css.map",
-    "main.d642e31e.js.map": "/auto-pulse/static/js/main.d642e31e.js.map",
-    "881.ac4948a8.chunk.css.map": "/auto-pulse/static/css/881.ac4948a8.chunk.css.map",
+    "main.d9f66f28.js.map": "/auto-pulse/static/js/main.d9f66f28.js.map",
+    "881.f28d71af.chunk.css.map": "/auto-pulse/static/css/881.f28d71af.chunk.css.map",
     "881.a42c728a.chunk.js.map": "/auto-pulse/static/js/881.a42c728a.chunk.js.map",
-    "556.074b9bf5.chunk.css.map": "/auto-pulse/static/css/556.074b9bf5.chunk.css.map",
+    "556.cae034cc.chunk.css.map": "/auto-pulse/static/css/556.cae034cc.chunk.css.map",
     "556.4b0240cb.chunk.js.map": "/auto-pulse/static/js/556.4b0240cb.chunk.js.map",
-    "404.27970cc1.chunk.css.map": "/auto-pulse/static/css/404.27970cc1.chunk.css.map",
+    "404.1858572b.chunk.css.map": "/auto-pulse/static/css/404.1858572b.chunk.css.map",
     "404.071deebf.chunk.js.map": "/auto-pulse/static/js/404.071deebf.chunk.js.map",
     "319.e56e1775.chunk.js.map": "/auto-pulse/static/js/319.e56e1775.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a0c7337.css",
-    "static/js/main.d642e31e.js"
+    "static/js/main.d9f66f28.js"
   ]
 }
