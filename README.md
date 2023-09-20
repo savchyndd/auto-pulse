@@ -19,15 +19,16 @@ For detailed view of project, refer to the: [`AutoPulse live page`](https://savc
 
 **Home page**
 
-<!-- <img src="./public/images/auth-endpoints.png" alt="Your pet API Documentation Auth endpoints" max-width="900" max-height="500"> -->
+<img src="./public/images/home-page-1.png" alt="Home page" max-width="900" max-height="500">
+<img src="./public/images/home-page-2.png" alt="Home page" max-width="900" max-height="500">
 
 **Catalog page**
 
-<!-- <img src="./public/images/user-endpoints.png" alt="Your pet API Documentation User endpoints" max-width="900" max-height="500"> -->
+<img src="./public/images/catalog-page.png" alt="Catalog page" max-width="900" max-height="500">
 
 **Favorite page**
 
-<!-- <img src="./public/images/contacts-endpoints.png" alt="Your pet API Documentation Contacts endpoints" max-width="900" max-height="500"> -->
+<img src="./public/images/favorites-page.png" alt="Favorite page" max-width="900" max-height="500">
 
 ## Installation
 
